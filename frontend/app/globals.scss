@@ -1,0 +1,72 @@
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+
+$primary: $indigo-400;
+
+$theme-colors: map-merge($theme-colors, ("primary": $primary,
+      "libro": $blue-600,
+      "pelicula": $green-600,
+      "musica": $pink-700,
+      "videojuego": $red-500,
+    ));
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+/*
+$newPrimaryColor: $indigo-400;
+
+.btn-primary {
+    @include button-variant($newPrimaryColor, darken($newPrimaryColor, 7.5%), lighten($newPrimaryColor, 100%), lighten($newPrimaryColor,5%), lighten($newPrimaryColor, 10%), lighten($newPrimaryColor,100%));
+}
+
+
+.btn-outline-primary {
+    @include button-outline-variant($newPrimaryColor, #FFFFFF, lighten($newPrimaryColor,5%), $newPrimaryColor);
+}
+*/
+
+$twitterColor: #1D9BF0;
+
+.btn-twitter {
+  @include button-variant($twitterColor, darken($twitterColor, 7.5%), lighten($twitterColor, 100%), lighten($twitterColor, 5%), lighten($twitterColor, 10%), lighten($twitterColor, 100%));
+}
+
+.btn-outline-twitter {
+  @include button-outline-variant(darken($twitterColor, 7.5%), #FFFFFF, lighten($twitterColor, 5%), $twitterColor);
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: transparent !important;
+  color: inherit;
+}
+
+button.accordion-button:focus {
+  box-shadow: inherit;
+}
+
+@import "../node_modules/bootstrap/scss/utilities";
+
+$utilities: map-merge($utilities, ("height": map-merge(map-get($utilities, "height"), (responsive: true), ), ));
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+$utilities: map-merge($utilities, ("border": map-merge(map-get($utilities, "border"), (responsive: true), ), ));
+
+$utilities: map-merge($utilities, ("border-1": map-merge(map-get($utilities, "border"), (responsive: true), ), ));
+
+$utilities: map-merge($utilities, ("rounded": map-merge(map-get($utilities, "rounded"), (responsive: true), ), ));
+
+@import "bootstrap/scss/utilities/api";
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+.selectable {
+  cursor: pointer;
+}
